@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using TestTask.Services.Interfaces;
+using TestTask.Application.Interfaces;
 
 namespace TestTask.Controllers
 {
@@ -11,11 +11,11 @@ namespace TestTask.Controllers
     [ApiController]
     public class OrdersController : ControllerBase
     {
-        private readonly IOrderService orderService;
+        private readonly IOrderService _orderService;
 
         public OrdersController(IOrderService orderService)
         {
-            this.orderService = orderService;
+            _orderService = orderService;
         }
 
         /// <summary>
@@ -26,8 +26,8 @@ namespace TestTask.Controllers
         [Route("selected-order")]
         public async Task<IActionResult> Get()
         {
-            var result = await this.orderService.GetOrder();
-            return this.Ok(result);
+            var result = await _orderService.GetOrder();
+            return Ok(result);
         }
 
         /// <summary>
@@ -38,8 +38,8 @@ namespace TestTask.Controllers
         [Route("selected-orders")]
         public async Task<IActionResult> GetOrders()
         {
-            var result = await this.orderService.GetOrders();
-            return this.Ok(result);
+            var result = await _orderService.GetOrders();
+            return Ok(result);
         }
     }
 }

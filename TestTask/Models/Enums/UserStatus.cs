@@ -1,4 +1,4 @@
-﻿namespace TestTask.Enums
+﻿namespace TestTask.Models.Enums
 {
     public enum UserStatus
     {

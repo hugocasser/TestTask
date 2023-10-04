@@ -1,6 +1,6 @@
 ﻿using TestTask.Models;
 
-namespace TestTask.Services.Interfaces
+namespace TestTask.Application.Interfaces
 {
     public interface IOrderService
     {

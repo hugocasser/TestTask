@@ -1,4 +1,4 @@
-﻿using TestTask.Enums;
+﻿using TestTask.Models.Enums;
 
 namespace TestTask.Models
 {

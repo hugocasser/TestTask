@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using TestTask.Services.Interfaces;
+using TestTask.Application.Interfaces;
 
 namespace TestTask.Controllers
 {
@@ -11,11 +11,11 @@ namespace TestTask.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private readonly IUserService userService;
+        private readonly IUserService _userService;
 
         public UsersController(IUserService userService)
         {
-            this.userService = userService;
+            _userService = userService;
         }
 
         /// <summary>
@@ -26,8 +26,8 @@ namespace TestTask.Controllers
         [Route("selected-user")]
         public async Task<IActionResult> Get()
         {
-            var result = await this.userService.GetUser();
-            return this.Ok(result);
+            var result = await _userService.GetUser();
+            return Ok(result);
         }
 
         /// <summary>
@@ -38,8 +38,8 @@ namespace TestTask.Controllers
         [Route("selected-users")]
         public async Task<IActionResult> GetUsers()
         {
-            var result = await this.userService.GetUsers();
-            return this.Ok(result);
+            var result = await _userService.GetUsers();
+            return Ok(result);
         }
     }
 }

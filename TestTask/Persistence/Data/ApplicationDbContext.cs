@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using TestTask.Enums;
 using TestTask.Models;
+using TestTask.Models.Enums;
 
-namespace TestTask.Data
+namespace TestTask.Persistence.Data
 {
     public class ApplicationDbContext : DbContext
     {
